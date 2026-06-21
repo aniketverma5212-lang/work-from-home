@@ -1,0 +1,395 @@
+/* Premium Variables & Design System */
+:root {
+    --brand-primary: #4f46e5;
+    --brand-dark: #0f172a;
+    --brand-success: #10b981;
+    --bg-main: #f8fafc;
+    --card-white: #ffffff;
+    --text-dark: #334155;
+    --text-light: #64748b;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+}
+
+.container {
+    width: 92%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--card-white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 92%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--brand-primary);
+    text-decoration: none;
+}
+.saved-jobs-toggle {
+    background: #e0e7ff;
+    color: var(--brand-primary);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.saved-jobs-toggle:hover {
+    background: var(--brand-primary);
+    color: white;
+}
+
+/* Hero & Advanced Search Dashboard */
+.hero-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    color: white;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+.hero-inner h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.025em;
+}
+.hero-inner p {
+    color: #94a3b8;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+.search-box {
+    background: var(--card-white);
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-shadow: var(--shadow-md);
+}
+.input-group {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    flex: 1;
+    color: var(--text-dark);
+}
+.input-group i {
+    color: var(--text-light);
+    margin-right: 0.75rem;
+}
+.input-group input, .input-group select {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+.btn-primary {
+    background: var(--brand-primary);
+    color: white;
+    border: none;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-primary:hover {
+    background: #4338ca;
+}
+
+/* Workspace Layout */
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+/* Sidebar Filter UI */
+.filter-card {
+    background: var(--card-white);
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 90px;
+}
+.filter-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.filter-card hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+.filter-group {
+    margin-bottom: 1.75rem;
+}
+.filter-group h4 {
+    font-size: 0.95rem;
+    color: var(--brand-dark);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+/* Modern Checklist UI styling */
+.checkbox-container, .radio-container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 0.65rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    user-select: none;
+}
+.checkbox-container input, .radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark, .radiomark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #f1f5f9;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+.radio-container class .radiomark {
+    border-radius: 50%;
+}
+.checkbox-container input:checked ~ .checkmark,
+.radio-container input:checked ~ .radiomark {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+}
+
+/* Listings Window */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.results-counter {
+    font-weight: 600;
+    color: var(--text-light);
+}
+.sort-wrapper select {
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    outline: none;
+}
+
+/* Premium Job Grid layout */
+.jobs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* Job Card UI */
+.job-card {
+    background: var(--card-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.job-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+.card-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+.job-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--brand-dark);
+}
+.bookmark-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.bookmark-btn.saved {
+    color: #f59e0b;
+}
+.company-badge {
+    color: var(--brand-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+.metadata-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+.metadata-row span i {
+    margin-right: 0.4rem;
+}
+.pill-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 1.5rem;
+}
+.pill {
+    background: #f1f5f9;
+    color: var(--text-dark);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.pill.type-pill {
+    background: #ecfdf5;
+    color: var(--brand-success);
+    font-weight: 600;
+}
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.25rem;
+}
+.salary-txt {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--brand-dark);
+}
+.action-apply {
+    background: var(--brand-dark);
+    color: white;
+    border: none;
+    padding: 0.55rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.action-apply:hover {
+    background: var(--brand-primary);
+}
+
+/* Saved Jobs Sidebar Modal Drawer */
+.saved-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 380px;
+    height: 100%;
+    background: var(--card-white);
+    box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+    z-index: 200;
+    transition: right 0.3s ease-in-out;
+    padding: 2rem;
+    overflow-y: auto;
+}
+.saved-sidebar.active {
+    right: 0;
+}
+.saved-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+#closeSavedBtn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 150;
+    display: none;
+}
+.overlay.active {
+    display: block;
+}
+.saved-item-box {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Code Breakpoints (Mobile First to Desktop Media Queries) */
+@media (min-width: 768px) {
+    .search-box {
+        flex-direction: row;
+    }
+    .main-layout {
+        grid-template-columns: 280px 1fr;
+    }
+}
+@media (min-width: 1024px) {
+    .jobs-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 grid layout columns on desktops */
+    }
+}

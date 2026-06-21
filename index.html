@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexiWork | Premium Remote Job Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-briefcase"></i> FlexiWork</a>
+            <div class="nav-right">
+                <button class="saved-jobs-toggle" id="savedJobsToggle">
+                    <i class="fa-solid fa-bookmark"></i> Saved Jobs (<span id="savedCount">0</span>)
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-inner">
+            <h1>Find Your Next Remote Career</h1>
+            <p>Explore thousands of verified work-from-home opportunities with elite tech firms.</p>
+            
+            <div class="search-box">
+                <div class="input-group">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="keywordInput" placeholder="Job title, skills, or company...">
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <select id="locationFilter">
+                        <option value="all">All Locations</option>
+                        <option value="india">Remote (India)</option>
+                        <option value="global">Remote (Global)</option>
+                        <option value="us">Remote (US/Europe)</option>
+                    </select>
+                </div>
+                <button id="mainSearchBtn" class="btn-primary">Search Portal</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-layout container">
+        
+        <aside class="filters-sidebar">
+            <div class="filter-card">
+                <h3><i class="fa-solid fa-sliders"></i> Filter Options</h3>
+                <hr>
+                
+                <div class="filter-group">
+                    <h4>Job Type</h4>
+                    <label class="checkbox-container">Full-Time
+                        <input type="checkbox" class="job-type-checkbox" value="Full-Time" checked>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-container">Part-Time
+                        <input type="checkbox" class="job-type-checkbox" value="Part-Time" checked>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-container">Contract
+                        <input type="checkbox" class="job-type-checkbox" value="Contract" checked>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Category</h4>
+                    <label class="radio-container">All Departments
+                        <input type="radio" name="category" value="all" checked>
+                        <span class="radiomark"></span>
+                    </label>
+                    <label class="radio-container">Development & Tech
+                        <input type="radio" name="category" value="tech">
+                        <span class="radiomark"></span>
+                    </label>
+                    <label class="radio-container">Data Science & Analytics
+                        <input type="radio" name="category" value="data">
+                        <span class="radiomark"></span>
+                    </label>
+                    <label class="radio-container">Design & Creative
+                        <input type="radio" name="category" value="design">
+                        <span class="radiomark"></span>
+                    </label>
+                    <label class="radio-container">Management & HR
+                        <input type="radio" name="category" value="hr">
+                        <span class="radiomark"></span>
+                    </label>
+                </div>
+            </div>
+        </aside>
+
+        <section class="listings-panel">
+            <div class="panel-header">
+                <span class="results-counter" id="totalJobsCount">Found 0 positions available</span>
+                <div class="sort-wrapper">
+                    <label for="sortSalary">Sort By Budget: </label>
+                    <select id="sortSalary">
+                        <option value="default">Featured</option>
+                        <option value="high">High to Low</option>
+                        <option value="low">Low to High</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="jobs-grid" id="jobsGrid">
+                </div>
+        </section>
+    </main>
+
+    <div class="saved-sidebar" id="savedSidebar">
+        <div class="saved-sidebar-header">
+            <h3>Saved Opportunities</h3>
+            <button id="closeSavedBtn">&times;</button>
+        </div>
+        <div class="saved-jobs-list" id="savedJobsList">
+            </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
